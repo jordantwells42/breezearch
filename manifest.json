@@ -6,7 +6,7 @@
       "service_worker": "background.js"
     },
 
-  "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "<all_urls>", "files"],
+  "permissions": ["tabs", "activeTab", "scripting", "tabGroups"],
     "action": {
       "default_popup": "popup.html"
     },
