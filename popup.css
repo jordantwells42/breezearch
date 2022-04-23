@@ -1,3 +1,18 @@
+window
+
 body {
   color: black;
+}
+
+input[type="checkbox"] {
+  padding: 20px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0,0,0,0.06);
+}
+
+label {
+  color: blue;
+  font-weight: bold;
+  width: 130 px;
+  float: right;
 }
