@@ -44,7 +44,7 @@ chrome.runtime.onMessage.addListener(
 
       let tabs = []
 
-      current_tab = await chrome.tabs.getCurrent();
+      let current_tab = await chrome.tabs.getCurrent();
 
 
       for (let search_url of search_urls){
@@ -72,10 +72,6 @@ chrome.runtime.onMessage.addListener(
         
         */
       };
-
-
-
-
 
 
       groupId = await chrome.tabs.group({tabIds : ids})
