@@ -6,31 +6,6 @@ function range(start, end) {
     return ans;
 }
 
-
-const manifest = chrome.runtime.getManifest();
-
-function installContentScript() {
-  // iterate over all content_script definitions from manifest
-  // and install all their js files to the corresponding hosts.
-  let contentScripts = manifest.content_scripts;
-  for (let i = 0; i < contentScripts.length; i++) {
-    let contScript = contentScripts[i];
-    chrome.tabs.query({ url: contScript.matches }, function(foundTabs) {
-      for (let j = 0; j < foundTabs.length; j++) {
-        let javaScripts = contScript.js;
-        for (let k = 0; k < javaScripts.length; k++) {
-          chrome.tabs.executeScript(foundTabs[j].id, {
-            file: javaScripts[k]
-          });          
-        }
-      }
-    });
-  }
-}
-
-chrome.runtime.onInstalled.addListener(installContentScript);
-
-
 chrome.runtime.onMessage.addListener(
   async function(request, sender, sendResponse) {
     console.log(sender.tab ?
@@ -44,7 +19,8 @@ chrome.runtime.onMessage.addListener(
 
       let tabs = []
 
-      current_tab = await chrome.tabs.getCurrent();
+      let current_tab = await chrome.tabs.query({highlighted: true, active: true});
+      current_tab = current_tab[0]
 
 
       for (let search_url of search_urls){
@@ -74,14 +50,10 @@ chrome.runtime.onMessage.addListener(
       };
 
 
-
-
-
-
       groupId = await chrome.tabs.group({tabIds : ids})
       chrome.tabGroups.update(groupId, {title: request.search_query, collapsed: true})
 
-      chrome.tabs.update(current_tab.id, {active: true});
+      chrome.tabs.update(current_tab.id, {highlighted:true, selected: true, active: true});
 
       sendResponse({farewell: request.search_query});
 
