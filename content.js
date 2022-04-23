@@ -17,7 +17,7 @@ function getSelectionText() {
 
 document.onmouseup = document.onkeyup = function() {
   document.body.onclick = function(e) {
-    if (e.altKey) || (e.metaKey) {
+    if ((e.altKey) || (e.metaKey)) {
         let word = getSelectionText();
         chrome.runtime.sendMessage({greeting: "hello", search_query: word}, function(response) {
           console.log(response.farewell);
