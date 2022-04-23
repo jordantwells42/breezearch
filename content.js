@@ -1,5 +1,3 @@
-console.log("lmaojsdsdaaaaaaaaaaaaaaasdi")
-
 function getSelectionText() {
     var text = "";
     var activeEl = document.activeElement;
@@ -17,16 +15,10 @@ function getSelectionText() {
 }
 
 
-function goToURL(url){
-    return null;
-}
-
-
 document.onmouseup = document.onkeyup = function() {
   document.body.onclick = function(e) {
-    if (e.ctrlKey) {
+    if (e.altKey) {
         let word = getSelectionText();
-        alert(word);
         chrome.runtime.sendMessage({greeting: "hello", search_query: word}, function(response) {
           console.log(response.farewell);
         });   
