@@ -1,7 +1,6 @@
-window
-
 body {
   color: black;
+  width: 82px;
 }
 
 input[type="checkbox"] {
