@@ -19,7 +19,17 @@
    }
   ],
 
+  "default_icon": {
+    "128": "breezy_img.jpg"
+  }
+  ,
+
+  "icons": {
+    "128": "breezy_img.jpg"
+  }
+  ,
   "host_permissions": [
       "<all_urls>"
   ]
+
 }
