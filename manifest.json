@@ -5,7 +5,13 @@
     "background": {
       "service_worker": "background.js"
     },
-
+  "icons": {
+    "128": "breezy_img.png",
+    "64": "breezy_img.png",
+    "48": "breezy_img.png",
+    "32": "breezy_img.png",
+    "16": "breezy_img.png"
+  },
   "permissions": ["tabs", "activeTab", "scripting", "tabGroups", "storage"],
     "action": {
       "default_popup": "popup.html"
@@ -20,21 +26,7 @@
    }
   ],
 
-  "default_icon": {
-    "128": "breezy_img_128.jpg",
-    "64": "breezy_img_48.jpg",
-    "32": "breezy_img_32.jpg",
-    "16": "breezy_img_16.jpg"
-  }
-  ,
 
-  "icons": {
-    "128": "breezy_img_128.jpg",
-    "64": "breezy_img_48.jpg",
-    "32": "breezy_img_32.jpg",
-    "16": "breezy_img_16.jpg"
-  }
-  ,
   "host_permissions": [
       "<all_urls>"
   ]
