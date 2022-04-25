@@ -10,8 +10,9 @@ input[type="checkbox"] {
 }
 
 label {
-  color: blue;
+  color: rgb(153, 0, 255);
   font-weight: bold;
   width: 130 px;
   float: right;
 }
+
