@@ -6,6 +6,7 @@ function range(start, end) {
     return ans;
 }
 
+
 chrome.runtime.onMessage.addListener(
   async function(request, sender, sendResponse) {
     console.log(sender.tab ?
@@ -14,8 +15,7 @@ chrome.runtime.onMessage.addListener(
 
     if (request.greeting == 'hello'){
 
-      let search_urls = ["https://www.google.com/search?q=", "https://en.wikipedia.org/w/index.php?search=", "https://www.youtube.com/results?search_query="];
-
+      let search_urls = ["https://www.google.com/search?q=", "https://en.wikipedia.org/w/index.php?search=", "https://www.encyclopedia.com/gsearch?q="];
 
       let tabs = []
 
